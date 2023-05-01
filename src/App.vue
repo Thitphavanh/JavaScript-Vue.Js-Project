@@ -1,22 +1,19 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
+import Navbar from '@/components/Navbar.vue'
 </script>
 
 <template>
   <header>
     <div class="wrapper">
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink :to="{ name: 'todo' }">Todo</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+      <Navbar></Navbar>
     </div>
   </header>
 
   <RouterView />
 </template>
 
-<style scoped>
+<style>
 header {
   line-height: 1.5;
   max-height: 100vh;
