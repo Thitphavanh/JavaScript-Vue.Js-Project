@@ -1,5 +1,8 @@
 <script setup>
 import { ref, computed, onUpdated } from 'vue'
+import { useTodoStore } from '@/stores/todo.js'
+
+const store = useTodoStore()
 
 // Life cycle
 onUpdated(() => {
@@ -41,6 +44,14 @@ const doubleNumber = computed(() => {
   <hr />
   <h3>This number is: {{ oddOrEvent }}</h3>
   <h3>This number is: {{ doubleNumber }}</h3>
+
+  <pre>
+    {{ store.getTodoById }}
+  </pre>
+  <hr>
+  <pre>
+    {{ store.todos }}
+  </pre>
 </template>
 
 <style scoped>
